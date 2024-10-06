@@ -63,12 +63,20 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+            <TextView
+                android:id="@+id/day_circle"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_background"
+                android:gravity="center"
                 android:text="Lun"
-                android:backgroundTint="@color/green"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:padding="8dp" />
+
         </LinearLayout>
 
         <!-- Desafío 1 -->
