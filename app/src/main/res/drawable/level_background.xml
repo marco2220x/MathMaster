@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Estado no completado (candado) -->
+    <item android:state_enabled="false">
+        <shape>
+            <solid android:color="@android:color/darker_gray" />
+            <corners android:radius="15dp" /> <!-- Esquinas redondeadas -->
+            <stroke
+                android:width="2dp"
+                android:color="@android:color/darker_gray" /> <!-- Borde -->
+        </shape>
+    </item>
+
+    <!-- Estado completado (palomita) -->
+    <item>
+        <shape>
+            <solid android:color="@android:color/holo_blue_light" />
+            <corners android:radius="15dp" /> <!-- Esquinas redondeadas -->
+            <stroke
+                android:width="2dp"
+                android:color="@android:color/holo_blue_light" /> <!-- Borde -->
+        </shape>
+    </item>
+</selector>

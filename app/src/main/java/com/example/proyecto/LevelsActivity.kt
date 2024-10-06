@@ -1,5 +1,6 @@
 package com.example.proyecto
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +25,7 @@ class LevelsActivity : AppCompatActivity() {
         // Referencias a las vistas
         val recyclerView = findViewById<RecyclerView>(R.id.rv_levels)
         val progressBar = findViewById<ProgressBar>(R.id.progress_bar)
-        val changeTopicButton = findViewById<Button>(R.id.btn_change_topic)
+        val backButton = findViewById<Button>(R.id.btn_back)
 
         // Cargar los niveles según el tema seleccionado
         val levels = loadLevelsForTopic(selectedTopic)
@@ -38,9 +39,11 @@ class LevelsActivity : AppCompatActivity() {
         val progress = (completedLevels.toFloat() / levels.size) * 100
         progressBar.progress = progress.toInt()
 
-        // Cambiar de tema
-        changeTopicButton.setOnClickListener {
-            // Lógica para cambiar de tema (puede redirigir a una nueva actividad o mostrar un menú)
+        // Funcionalidad del botón de regresar
+        backButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()  // Cierra la actividad actual para que no quede en la pila
         }
     }
 
@@ -55,7 +58,7 @@ class LevelsActivity : AppCompatActivity() {
                 Level("Nivel 2", isCompleted = false),
                 Level("Nivel 3", isCompleted = false)
             )
-            "Operaciones Básicas" -> listOf(
+            "Factorización" -> listOf(
                 Level("Nivel 1", isCompleted = true),
                 Level("Nivel 2", isCompleted = true),
                 Level("Nivel 3", isCompleted = false),
